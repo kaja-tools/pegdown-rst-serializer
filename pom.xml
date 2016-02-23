@@ -24,9 +24,9 @@
     </developers>
     
     <scm>
-        <connection>scm:git:git@github.com:example/example-application.git</connection>
-        <developerConnection>scm:git:git@github.com:example/example-application.git</developerConnection>
-        <url>git@github.com:example/example-application.git</url>
+        <url>https://github.com/kaja-tools/pegdown-rst-serializer</url>
+        <connection>scm:git:git@github.com:kaja-tools/pegdown-rst-serializer.git</connection>
+        <developerConnection>scm:git:git@github.com:kaja-tools/pegdown-rst-serializer.git</developerConnection>
     </scm>
      
     <dependencies>
