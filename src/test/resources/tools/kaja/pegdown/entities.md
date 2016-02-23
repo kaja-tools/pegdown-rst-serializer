@@ -1,0 +1,1 @@
+You can use HTML&nbsp;entities in &copy;Markdown. Transformed into the real characters in &reg;reST.

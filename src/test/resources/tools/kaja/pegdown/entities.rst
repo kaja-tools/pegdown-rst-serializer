@@ -1,0 +1,1 @@
+You can use HTML entities in ©Markdown. Transformed into the real characters in ®reST.
