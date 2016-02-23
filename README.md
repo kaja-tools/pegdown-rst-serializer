@@ -1,7 +1,12 @@
 # Introduction
 
-Project **pegdown-rst-serializer** enables you to convert Markdown to reStructuredText using Java.
-It is built on top of (pegdown)[https://github.com/sirthias/pegdown] Java Markdown parser.
+Project **pegdown-rst-serializer** enables you to convert [Markdown](https://daringfireball.net/projects/markdown/) to
+[reStructuredText](http://docutils.sourceforge.net/rst.html) using Java.
+It is built on top of [pegdown](https://github.com/sirthias/pegdown) Java Markdown parser.
+
+# Installation
+
+> **TODO:** Upload to central Maven repo.
 
 # Usage
 
