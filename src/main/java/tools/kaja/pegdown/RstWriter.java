@@ -7,12 +7,37 @@ import org.apache.commons.lang3.StringUtils;
  */
 public class RstWriter
 {
+
+    /**
+     * Newline character
+     */
     protected static final String NEW_LINE = "\n";
+
+    /**
+     * Number of indent spaces
+     *
+     * Used to indent nested reStructuredText blocks.
+     */
     protected static final int INDENT_SPACES = 4;
 
+    /**
+     * reStructuredText markup being written
+     */
     protected String rst;
+
+    /**
+     * Current nesting level
+     */
     protected int indent;
+
+    /**
+     * Length of last written line
+     */
     protected int lastLineLength;
+
+    /**
+     * See enableRawInlineHtml()
+     */
     protected boolean rawInlineHtmlEnabled;
 
     /**
@@ -50,11 +75,11 @@ public class RstWriter
     }
 
     /**
-     * Write raw reST markup
+     * Write raw reStructuredText markup
      *
      * Use methods indent() and outdent() to modify the identation.
      *
-     * @param text Raw reST markup
+     * @param text Raw reStructuredText markup
      */
     public void markup( String text )
     {
@@ -139,6 +164,12 @@ public class RstWriter
         return output;
     }
 
+    /**
+     * Write raw reStructuredText markup
+     *
+     * @param text Raw reStructuredText markup
+     * @param useIdent Apply current ident (see properties INDENT_SPACES and indent)
+     */
     protected void markup( String text, boolean useIdent )
     {
         if ( useIdent )
@@ -165,9 +196,15 @@ public class RstWriter
         lastLineLength = lines[lines.length - 1].length();
     }
 
+    /**
+     * Escape reStructuredText markup
+     *
+     * See http://docutils.sourceforge.net/docs/user/rst/quickref.html#inline-markup.
+     * @param text Raw reStructuredText markup
+     * @return Escaped reStructuredText markup
+     */
     protected String escape( String text )
     {
-        // http://docutils.sourceforge.net/docs/user/rst/quickref.html#inline-markup
         return text.replaceAll( "([`\\|*_])", "\\\\$1" );
     }
 }
