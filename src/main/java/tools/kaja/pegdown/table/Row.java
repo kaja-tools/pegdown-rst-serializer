@@ -20,11 +20,6 @@ public class Row
     protected List<Cell> cells = new ArrayList<Cell>();
 
     /**
-     * Active cell
-     */
-    protected Cell activeCell;
-
-    /**
      * Constructor
      *
      * @param type Type of this row
@@ -52,10 +47,10 @@ public class Row
      */
     public Cell addCell()
     {
-        activeCell = new Cell();
-        cells.add( activeCell );
+        Cell cell = new Cell();
+        cells.add( cell );
 
-        return activeCell;
+        return cell;
     }
 
     /**
