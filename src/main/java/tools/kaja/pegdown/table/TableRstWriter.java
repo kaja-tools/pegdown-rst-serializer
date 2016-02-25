@@ -6,18 +6,39 @@ import org.apache.commons.lang3.StringUtils;
 
 import tools.kaja.pegdown.RstWriter;
 
+/**
+ * reStructuredText table markup writer
+ */
 public class TableRstWriter
 {
 
+    /**
+     * Min number of spaces between column pipe "|" and content
+     */
     protected static final int PADDING = 1;
 
-    protected RstWriter rst;
+    /**
+     * Main document reStructuredText markup writer
+     */
+    protected RstWriter rstWriter;
 
-    public TableRstWriter( RstWriter rst )
+    /**
+     * Constructor
+     *
+     * @param rstWriter Main document reStructuredText markup writer
+     */
+    public TableRstWriter( RstWriter rstWriter )
     {
-        this.rst = rst;
+        this.rstWriter = rstWriter;
     }
 
+    /**
+     * Write table markup
+     *
+     * Markup is written to the main document writer specified
+     * in the constructor.
+     * @param table Parsed table structure
+     */
     public void write( Table table )
     {
         List<Row> rows = table.getRows();
@@ -30,11 +51,11 @@ public class TableRstWriter
         List<Column> columns = table.getColumns();
 
         writeRowSeparator( columns, RowType.BODY );
-        rst.newLine();
+        rstWriter.newLine();
 
         for ( Row row : table.getRows() )
         {
-            rst.markup( "|" + StringUtils.repeat( " ", PADDING ) );
+            rstWriter.markup( "|" + StringUtils.repeat( " ", PADDING ) );
             for ( int index = 0; index < columns.size(); ++index )
             {
                 Cell cell = row.getCell( index );
@@ -43,33 +64,47 @@ public class TableRstWriter
                 if ( cell != null )
                 {
                     cellWidth = cell.getWidth();
-                    rst.markup( cell.getRst() );
+                    rstWriter.markup( cell.getRst() );
                 }
 
-                rst.markup( StringUtils.repeat( " ", columns.get( index ).getWidth() - cellWidth ) );
-                rst.markup( StringUtils.repeat( " ", PADDING ) + "|" );
-                if ( index < columns.size() - 1)
+                rstWriter.markup( StringUtils.repeat( " ", columns.get( index ).getWidth() - cellWidth ) );
+                rstWriter.markup( StringUtils.repeat( " ", PADDING ) + "|" );
+                if ( index < columns.size() - 1 )
                 {
-                    rst.markup( StringUtils.repeat( " ", PADDING ) );
+                    rstWriter.markup( StringUtils.repeat( " ", PADDING ) );
                 }
             }
-            rst.newLine();
+            rstWriter.newLine();
             writeRowSeparator( columns, row.getType() );
-            rst.newLine();
+            rstWriter.newLine();
         }
 
-        rst.newLine();
+        rstWriter.newLine();
     }
 
+    /**
+     * Write horizontal row separator
+     *
+     * Example (rowType = HEADER):
+     *
+     * +======+=================+
+     *
+     * Example (rowType = BODY):
+     *
+     * +------+-----------------+
+     *
+     * @param columns List of columns
+     * @param rowType Type of the first row
+     */
     protected void writeRowSeparator( List<Column> columns, RowType rowType )
     {
         String underline = rowType == RowType.HEADER ? "=" : "-";
 
-        rst.markup( "+" );
+        rstWriter.markup( "+" );
         for ( Column column : columns )
         {
-            rst.markup( StringUtils.repeat( underline, column.getWidth() + PADDING * 2 ) );
-            rst.markup( "+" );
+            rstWriter.markup( StringUtils.repeat( underline, column.getWidth() + PADDING * 2 ) );
+            rstWriter.markup( "+" );
         }
     }
 }
