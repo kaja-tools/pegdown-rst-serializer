@@ -93,7 +93,7 @@ public class ToRstSerializer
         rstWriters = new HashMap<String, RstWriter>();
         rstWriters.put( "main", new RstWriter() );
         rstWriters.put( "tableCell", new RstWriter() );
-        setRstWriter("main");
+        setRstWriter( "main" );
         tableRstWriter = new TableRstWriter( rstWriter );
     }
 
@@ -178,7 +178,7 @@ public class ToRstSerializer
     /**
      * Code (inline)
      *
-     * @param CodeNode node Code node
+     * @param node Code node
      */
     public void visit( CodeNode node )
     {
@@ -296,7 +296,7 @@ public class ToRstSerializer
     public void visit( ListItemNode node )
     {
         rstWriter.markup( listItemMarker + " " );
-        // TODO: Handle multiline items
+        // This does not handle multiline items
         visitChildren( node );
         rstWriter.newLine();
     }
@@ -569,8 +569,9 @@ public class ToRstSerializer
         rstWriter.newLine();
         rstWriter.indent();
         rstWriter.markup(
-                         "Following nodes are not supported yet and were processed only partially " +
-                         "during the Markdown to reStructuredText conversion" );
+            "Following nodes are not supported yet and were processed only partially "
+            +
+            "during the Markdown to reStructuredText conversion" );
         rstWriter.newLine();
         for ( String node : unsupported )
         {
@@ -588,7 +589,7 @@ public class ToRstSerializer
         {
             // This is not used for any security related stuff.
             // We just need 32 chars hash of a string. MD5 is fine for this.
-            md = MessageDigest.getInstance("MD5");
+            md = MessageDigest.getInstance( "MD5" );
         }
         catch ( NoSuchAlgorithmException e )
         {
@@ -597,7 +598,7 @@ public class ToRstSerializer
 
         try
         {
-            md.update(text.getBytes("UTF-8"));
+            md.update( text.getBytes( "UTF-8" ) );
         }
         catch ( UnsupportedEncodingException e )
         {
@@ -606,6 +607,6 @@ public class ToRstSerializer
 
         byte[] digest = md.digest();
 
-        return String.format("%032x", new java.math.BigInteger(1, digest));
+        return String.format( "%032x", new java.math.BigInteger( 1, digest ) );
     }
 }
