@@ -6,7 +6,15 @@ It is built on top of [pegdown](https://github.com/sirthias/pegdown) Java Markdo
 
 # Installation
 
-> **TODO:** Upload to central Maven repo.
+```
+<dependency>
+    <groupId>tools.kaja</groupId>
+    <artifactId>pregdown-rst-serializer<artifactId>
+    <version>1.0.0</version>
+</dependency>
+```
+
+JAR can be downloaded directly from [Maven central repository](http://repo1.maven.org/maven2/tools/kaja/pegdown-rst-serializer/).
 
 # Usage
 
