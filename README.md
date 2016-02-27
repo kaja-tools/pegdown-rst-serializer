@@ -25,3 +25,15 @@ PegDownProcessor pegDownProcessor = new PegDownProcessor();
 RootNode astRoot = pegDownProcessor.parseMarkdown( md );
 String rst = new ToRstSerializer().toRst( astRoot, md );
 ```
+
+Example input file README.md:
+
+```
+Hello [GitHub](https://github.com/)
+```
+
+Resulting reStructuredText string:
+
+```
+Hello `GitHub <https://github.com/>`_
+```
