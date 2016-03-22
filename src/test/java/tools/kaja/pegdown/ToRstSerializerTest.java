@@ -13,9 +13,9 @@ public class ToRstSerializerTest
 {
 
     @Test
-    public void testMd2RstHeaders()
+    public void testMd2RstHeader()
     {
-        testMd2Rst( "headers" );
+        testMd2Rst( "header" );
     }
 
     @Test
@@ -31,9 +31,9 @@ public class ToRstSerializerTest
     }
 
     @Test
-    public void testMd2RstEntities()
+    public void testMd2RstEntity()
     {
-        testMd2Rst( "entities" );
+        testMd2Rst( "entity" );
     }
 
     @Test
