@@ -3,7 +3,7 @@
     <groupId>tools.kaja</groupId>
     <artifactId>pegdown-rst-serializer</artifactId>
     <packaging>jar</packaging>
-    <version>1.0.3-SNAPSHOT</version>
+    <version>1.0.1-SNAPSHOT</version>
     <name>${project.groupId}:${project.artifactId}</name>
     <description>PegDown reStructuredText serializer</description>
     <url>https://github.com/kaja-tools</url>
