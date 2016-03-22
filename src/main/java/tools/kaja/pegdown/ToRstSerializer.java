@@ -122,7 +122,7 @@ public class ToRstSerializer
         writeImages();
         writeUnsupported();
 
-        String rst = rstWriter.toString( true );
+        String rst = rstWriter.output( true );
 
         rstWriter.clear();
         unsupported = null;
@@ -418,7 +418,7 @@ public class ToRstSerializer
         setRstWriter( "tableCell" );
         visitChildren( node );
         boolean isRawInlineHtmlEnabled = rstWriter.isRawInlineHtmlEnabled();
-        cell.setRst( rstWriter.toString( false ) );
+        cell.setRst( rstWriter.output( false ) );
         rstWriter.clear();
         setRstWriter( "main" );
         if ( isRawInlineHtmlEnabled )

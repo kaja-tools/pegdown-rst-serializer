@@ -157,7 +157,7 @@ public class RstWriter
      *
      * @return reStructuredText markup
      */
-    public String toString( boolean includeMeta )
+    public String output( boolean includeMeta )
     {
         String output = "";
 
