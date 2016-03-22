@@ -9,7 +9,7 @@ Content Cell  | Content Cell
 | Phone     |   $12 |
 | Pipe      |    $1 |
 
-| Function name | Description                    |
-| ------------- | ------------------------------ |
-| `help()`      | Display the help window.       |
-| `destroy()`   | **Destroy your computer!**     |
+| Function name | Description                     |
+| ------------- | ------------------------------- |
+| `help()`      | Display the <u>help</u> window. |
+| `destroy()`   | **Destroy your computer!**      |

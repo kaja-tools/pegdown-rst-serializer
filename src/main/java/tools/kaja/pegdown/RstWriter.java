@@ -140,18 +140,29 @@ public class RstWriter
     {
         rawInlineHtmlEnabled = true;
     }
+    
+    /**
+     * Is raw inline HTML enabled?
+     * 
+     * See the method enableRawInlineHtml() for more details.
+     * @return True if it is enabled; false otherwise.
+     */
+    public boolean isRawInlineHtmlEnabled()
+    {
+    	return rawInlineHtmlEnabled;
+    }
 
     /**
      * Get the reST markup of this writer
      *
      * @return reStructuredText markup
      */
-    public String toString()
+    public String toString( boolean includeMeta )
     {
         String output = "";
 
         // http://docutils.sourceforge.net/docs/ref/rst/roles.html#raw
-        if ( rawInlineHtmlEnabled )
+        if ( includeMeta && rawInlineHtmlEnabled )
         {
             output += ".. role:: raw-html(raw)\n";
             output += "    :format: html\n";
