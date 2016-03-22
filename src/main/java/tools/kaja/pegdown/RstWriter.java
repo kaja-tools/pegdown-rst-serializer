@@ -155,6 +155,7 @@ public class RstWriter
     /**
      * Get the reST markup of this writer
      *
+     * @param includeMeta Include reST metadata (roles) in the output
      * @return reStructuredText markup
      */
     public String output( boolean includeMeta )

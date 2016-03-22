@@ -237,9 +237,6 @@ public class ToRstSerializer
     /**
      * Header
      *
-     * # Markdown -> reST
-     *               ----
-     *
      * @param node Header node
      */
     public void visit( HeaderNode node )

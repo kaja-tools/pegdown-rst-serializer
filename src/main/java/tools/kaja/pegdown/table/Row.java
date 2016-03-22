@@ -32,7 +32,7 @@ public class Row
     /**
      * Get type
      *
-     * Header or body. Similar to HTML <th> and <tr>.
+     * Header or body. Similar to HTML th and tr tags.
      * @return Type of this row
      */
     public RowType getType()

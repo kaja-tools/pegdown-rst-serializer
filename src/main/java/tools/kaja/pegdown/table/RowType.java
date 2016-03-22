@@ -9,12 +9,12 @@ package tools.kaja.pegdown.table;
 public enum RowType
 {
     /**
-     * Similar to HTML <th>. Underlined with "=".
+     * Similar to HTML th tag. Underlined with "=".
      */
     HEADER,
 
     /**
-     * Similar to HTML <tr>. Underlined with "-".
+     * Similar to HTML tr tag. Underlined with "-".
      */
     BODY
 }
