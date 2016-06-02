@@ -183,7 +183,7 @@ public class ToRstSerializer
     public void visit( CodeNode node )
     {
         rstWriter.markup( "``" );
-        rstWriter.text( node.getText() );
+        rstWriter.markup( node.getText() );
         rstWriter.markup( "``" );
     }
 

@@ -65,6 +65,12 @@ public class ToRstSerializerTest
     {
         testMd2Rst( "html" );
     }
+    
+    @Test
+    public void testMd2RstReserved()
+    {
+        testMd2Rst( "reserved" );
+    }
 
     @Test
     public void testMd2RstTable()
